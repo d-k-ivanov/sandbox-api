@@ -1,0 +1,8 @@
+[requires]
+catch2/2.13.0
+cpprestsdk/2.10.16
+cxxopts/2.2.0
+spdlog/1.7.0
+
+[generators]
+cmake
