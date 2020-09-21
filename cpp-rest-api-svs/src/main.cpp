@@ -44,8 +44,8 @@ int main(int argc, char* argv[], char* env[])
 
     options.add_options()
         ("h,help",      "Show help")
-        ("a,action",    "Action",           cxxopts::value<std::string>())
-        ("p,path",      "Path to OAS file", cxxopts::value<std::string>());
+        ("a,action",    "Action",       cxxopts::value<std::string>())
+        ("p,path",      "Path to file", cxxopts::value<std::string>());
 
     options.custom_help("[-h] [-a] [-p]");
 

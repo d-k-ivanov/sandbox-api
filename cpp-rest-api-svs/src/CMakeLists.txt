@@ -14,7 +14,7 @@ target_link_libraries(cpp-rest-api-svs ${CONAN_LIBS})
 
 
 
-# if(NOT TARGET oas-tools)
-#     add_custom_target(oas-tools)
-#     add_dependencies(oas-tools oas-tools)
+# if(NOT TARGET cpp-rest-api-svs)
+#     add_custom_target(cpp-rest-api-svs)
+#     add_dependencies(cpp-rest-api-svs cpp-rest-api-svs)
 # endif()
