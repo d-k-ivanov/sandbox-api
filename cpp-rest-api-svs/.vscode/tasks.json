@@ -16,7 +16,7 @@
                 " && conan install . -pr ${workspaceRoot}/profiles/win-vs2019-x64 --build=missing"
             ],
             "windows": {
-                "command": "New-Item _build -ItemType Directory -ErrorAction SilentlyContinue; python -m pip install --upgrade conan; conan remove --locks; conan install . -pr ${workspaceRoot}\\profiles\\win-vs2019-x64 --build=missing"
+                "command": "New-Item _build -ItemType Directory -ErrorAction SilentlyContinue; python -m pip install --upgrade conan; conan remove --locks; conan install . -pr ${workspaceRoot}\\profiles\\win-vs2019-x64 --build=missing",
                 "args": []
             },
             "problemMatcher": [],

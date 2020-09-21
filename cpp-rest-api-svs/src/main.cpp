@@ -73,5 +73,7 @@ int main(int argc, char* argv[], char* env[])
         exit(99);
     }
 
+    std::system("pause");
+
     return 0;
  }
