@@ -28,7 +28,9 @@ CTestTestfile.cmake
 # Conan files
 venv
 .conan
+conan.lock
 conanbuildinfo.txt
 conanbuildinfo.cmake
 conaninfo.txt
 graphinfo
+graph_info.json

@@ -1,0 +1,79 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Preparation",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "command": "mkdir _build",
+            "args": [
+                " && python -m pip install --upgrade conan;",
+                " && conan remove --locks;",
+                " && conan install . -pr ${workspaceRoot}/profiles/win-vs2019-x64 --build=missing"
+            ],
+            "windows": {
+                "command": "New-Item _build -ItemType Directory -ErrorAction SilentlyContinue; python -m pip install --upgrade conan; conan remove --locks; conan install . -pr ${workspaceRoot}\\profiles\\win-vs2019-x64 --build=missing"
+                "args": []
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "Generate",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceRoot}/_build"
+            },
+            "command": "cmake",
+            "args": [
+                "-G",
+                "'Unix Makefiles'",
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "${workspaceRoot}"
+            ],
+            "windows": {
+                "command": "cmake",
+                "args": [
+                    "-G",
+                    "'Visual Studio 16 2019'",
+                    "-A",
+                    "x64",
+                    "-DCMAKE_BUILD_TYPE=Debug",
+                    "${workspaceRoot}"
+                ]
+            },
+            "problemMatcher": [],
+            "dependsOn": ["Preparation"]
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceRoot}/_build"
+            },
+            "command": "cmake",
+            "args": [
+                "--build",
+                "."
+            ],
+            "windows": {
+                "command": "cmake",
+                "args": [
+                    "--build",
+                    ".",
+                    "--config",
+                    "Debug"
+                ]
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": ["Generate"]
+        }
+    ]
+}
