@@ -72,7 +72,7 @@ $command = {
         if (Get-Command conan.exe -ErrorAction SilentlyContinue | Test-Path)
         {
             conan remove --locks
-            conan install . -pr .\profiles\win-vs2019-x64 --build=missing
+            conan install . -pr .\profiles\windows-msvc-16-static-release-x64 --build=missing
         }
         else
         {

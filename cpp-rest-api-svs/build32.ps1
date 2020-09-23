@@ -90,7 +90,7 @@ $command = {
                 python.exe -m pip install --upgrade conan
             }
             conan remove --locks
-            conan install . -pr .\profiles\win-vs2019-x86 --build=missing
+            conan install . -pr .\profiles\windows-msvc-16-static-release-x64 --build=missing
         }
     }
 
