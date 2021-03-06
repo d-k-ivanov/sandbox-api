@@ -10,7 +10,6 @@ include(Architecture)
 include(CompilerFlags)
 include(Macros)
 
-# conan setup goes here
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/conanbuildinfo.cmake)
     include(${CMAKE_CURRENT_SOURCE_DIR}/conanbuildinfo.cmake)
     conan_basic_setup()
@@ -26,8 +25,8 @@ set_base_vars()
 fix_project_version()
 
 # Set additional project information
-set(AUTHOR "Dmitriy Ivanov")
-set(COMPANY "Dmitriy Ivanov")
+set(AUTHOR "Dmitry Ivanov")
+set(COMPANY "Dmitry Ivanov")
 set(COPYRIGHT "Copyright (c) 2020 ${AUTHOR}. All rights reserved.")
 set(IDENTIFIER "io.github.d-k-ivanov.cpp-rest-api-svs")
 
